@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd" []>
+<Xdmf Version="3.0" xmlns:xi="https://www.w3.org/2001/XInclude">
+  <Domain>
+    <Grid Name="Grid" GridType="Uniform">
+      <Topology TopologyType="Tetrahedron" NumberOfElements="6316" NodesPerElement="4">
+        <DataItem Dimensions="6316 4" NumberType="Int" Format="HDF">cubo_diente.h5:/Mesh/Grid/topology</DataItem>
+      </Topology>
+      <Geometry GeometryType="XYZ">
+        <DataItem Dimensions="2619 3" Format="HDF">cubo_diente.h5:/Mesh/Grid/geometry</DataItem>
+      </Geometry>
+    </Grid>
+    <Grid Name="Desplazamiento" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="Desplazamiento" GridType="Uniform">
+        <xi:include xpointer="xpointer(/Xdmf/Domain/Grid[@GridType='Uniform'][1]/*[self::Topology or self::Geometry])" />
+        <Time Value="0" />
+        <Attribute Name="Desplazamiento" AttributeType="Vector" Center="Node">
+          <DataItem Dimensions="2619 3" Format="HDF">cubo_diente.h5:/Function/Desplazamiento/0</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+    <Grid Name="Deformacion" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="Deformacion" GridType="Uniform">
+        <xi:include xpointer="xpointer(/Xdmf/Domain/Grid[@GridType='Uniform'][1]/*[self::Topology or self::Geometry])" />
+        <Time Value="0" />
+        <Attribute Name="Deformacion" AttributeType="Tensor" Center="Node">
+          <DataItem Dimensions="2619 9" Format="HDF">cubo_diente.h5:/Function/Deformacion/0</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+    <Grid Name="Tension" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="Tension" GridType="Uniform">
+        <xi:include xpointer="xpointer(/Xdmf/Domain/Grid[@GridType='Uniform'][1]/*[self::Topology or self::Geometry])" />
+        <Time Value="0" />
+        <Attribute Name="Tension" AttributeType="Tensor" Center="Node">
+          <DataItem Dimensions="2619 9" Format="HDF">cubo_diente.h5:/Function/Tension/0</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+    <Grid Name="VonMises" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="VonMises" GridType="Uniform">
+        <xi:include xpointer="xpointer(/Xdmf/Domain/Grid[@GridType='Uniform'][1]/*[self::Topology or self::Geometry])" />
+        <Time Value="0" />
+        <Attribute Name="VonMises" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="2619 1" Format="HDF">cubo_diente.h5:/Function/VonMises/0</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+    <Grid Name="DistanciaAlAlineador" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="DistanciaAlAlineador" GridType="Uniform">
+        <xi:include xpointer="xpointer(/Xdmf/Domain/Grid[@GridType='Uniform'][1]/*[self::Topology or self::Geometry])" />
+        <Time Value="0" />
+        <Attribute Name="DistanciaAlAlineador" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="2619 1" Format="HDF">cubo_diente.h5:/Function/DistanciaAlAlineador/0</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+  </Domain>
+</Xdmf>
