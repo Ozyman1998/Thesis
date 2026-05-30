@@ -107,4 +107,8 @@ where $k = 1.2$ is the molar absorption coefficient ratio between free and hydro
    python ftir_tpu_annotated.py
    ```
 By default none of the scripts save images or data, only display graphs and data in terminal. Changes may be made for data and graphs saving
+Two files are avialable for testing:
+ - vivak_exolon.csv - PETG sheet
+ - 98a.csv - TPU 98 shore A
+   
 
