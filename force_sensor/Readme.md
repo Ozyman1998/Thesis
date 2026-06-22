@@ -110,6 +110,30 @@ $$F = \frac{\tau}{r} \cdot \sin(\theta)$$
 where τ = 0.0177 N·m (SG90 nominal torque at 5 V), *r* is the arm length from the servo axis to the contact point, and θ is the arm angle relative to horizontal. This approach yields an approximate calibration (uncertainty ±30–50 %) dominated by the manufacturer tolerance on the nominal torque.
 
 ---
+## Calibration setup
+
+| Top view | Lateral view |
+|----------|-------------|
+| ![Top view of the calibration set-up](sensor_calibration.jpeg) | ![Lateral view of the calibration set-up](sensor_calibration_2.jpeg) |
+
+**Figure:** The SG90 micro servo motor (blue, centre) is fixed above the FSR sensors
+using adhesive tape. The servo is controlled by an Arduino Mega 2560, while the
+ESP32-based acquisition unit (grey enclosure) simultaneously records the ADC output
+from each sensor. The LCD display shows elapsed time and real-time sensor readings.
+
+---
+
+## Experimental setup
+
+| FSR placement | Acquisition unit |
+|---------------|-----------------|
+| ![Two FSR sensors placed between the 3D-printed model and the clear aligner](Sensor_2.jpeg) | ![Complete acquisition setup during force measurement of a Duran (PETG) clear aligner](sensor_1.jpeg) |
+
+**Figure:** (a) Two FSR sensors placed between the 3D-printed model and the clear
+aligner. (b) Complete acquisition setup during force measurement of a Duran (PETG)
+clear aligner.
+
+
  
 ## Dependencies
  
