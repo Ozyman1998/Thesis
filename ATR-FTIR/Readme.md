@@ -7,6 +7,9 @@ Python scripts for ATR-FTIR spectral analysis of clear aligner materials develop
 | `ftir_petg_annotated.py` | Spectral analysis and annotation of PETG and copolyester materials |
 | `ftir_tpu_annotated.py` | Spectral analysis and annotation of TPU materials |
 | `ftir_tpu_classifier.py` | Automatic classification of TPU type, hard segment, and microphase separation indices |
+| `PETG_annotated_various.py` | Multi spectral analysis and annotation of PETG and copolyester materials |
+| `TPU_annotated_various.py`| Multi spectral analysis and annotation of TPU materials |
+| `Culture_media_ftir.py`| Normalization and representation of spectras from culture medium in contact with plastics |
 
 ### `ftir_petg_annotated.py` and `ftir_tpu_annotated.py`
  
@@ -27,6 +30,7 @@ Both scripts follow the same pipeline:
 |----------|---------------|
 | PETG | 725 cm⁻¹ (C-H aromatic o.o.p.) |
 | hTPU | 1410 cm⁻¹ (aromatic ring deformation) |
+| culture medium | 3250 cm⁻¹  (O-H Stretching band in water) |
 
 #### Annotated bands
  
@@ -77,9 +81,9 @@ Automatic classification pipeline for TPU materials. Given a single spectrum fil
 
 #### DPS and DOR equations
  
-$$\mathrm{DPS\,(\%)} = \frac{A_{1698} + A_{1715}}{A_{1698} + A_{1715} + k \cdot A_{1730}} \times 100$$
+DPS (%) $= \dfrac{A_{1698} + A_{1715}}{A_{1698} + A_{1715} + k \cdot A_{1730}} \times 100$
  
-$$\mathrm{DOR\,(\%)} = \frac{A_{1698}}{A_{1698} + A_{1715} + k \cdot A_{1730}} \times 100$$
+DOR(%) $= \frac{A_{1698}}{A_{1698} + A_{1715} + k \cdot A_{1730}} \times 100$
  
 where $k = 1.2$ is the molar absorption coefficient ratio between free and hydrogen-bonded carbonyl groups.
  
